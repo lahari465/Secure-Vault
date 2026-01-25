@@ -1,65 +1,147 @@
+import { AddCard } from "@/components/AddCard";
+import { AddFile } from "@/components/AddFile";
+import { AddPassword } from "@/components/AddPassword";
+import { YourCards } from "@/components/YourCards";
+import { YourFiles } from "@/components/YourFiles";
+import { YourPasswords } from "@/components/YourPasswords";
+import { CreditCard, FileText, Lock } from "lucide-react";
 import Image from "next/image";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    // <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 p-8">
+    //   <div className="max-w-7xl mx-auto space-y-12">
+    //     {/* Header */}
+    //     <div className="text-center mb-12">
+    //       <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mb-3">
+    //         Secure Vault
+    //       </h1>
+
+
+    //---------------------
+//     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 p-8">
+//   <div className="max-w-7xl mx-auto space-y-12">
+//     {/* Header */}
+//     <div className="text-center mb-12">
+//       <h1 className="text-5xl font-black text-black dark:text-white mb-3">
+//         Secure Vault
+//       </h1>
+//     </div>
+
+        
+    
+//         <p className="text-gray-600 dark:text-gray-300 text-lg">
+//   Manage your cards, passwords, and files safely in one place
+// </p>
+// </div> 
+// ---------------------------
+    // <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-blue-900 dark:to-purple-900 p-8 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen p-8">
+        <SignedIn>
+  <div className="max-w-7xl mx-auto space-y-12">
+    {/* Header */}
+    <div className="text-center mb-12">
+      <h1 className="text-5xl font-black mb-3">
+        Secure Vault
+      </h1>
+      <p className="text-lg">
+        Manage your cards, passwords, and files safely in one place
+      </p>
     </div>
+        {/* Files Section */}
+        <div>
+          {/* <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-3"> */}
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6 flex items-center gap-3">
+
+            {/* <FileText className="w-8 h-8 text-orange-600" /> */}
+            <FileText className="w-8 h-8 text-orange-600 dark:text-orange-400" />
+
+            Files Management
+          </h2>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <AddFile/>
+            <YourFiles />
+          </div>
+        </div>
+
+        {/* Passwords Section */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6 flex items-center gap-3">
+            <Lock className="w-8 h-8 text-green-600" />
+            Password Management
+          </h2>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <AddPassword/>
+            <YourPasswords />
+          </div>
+        </div>
+
+        {/* Cards Section */}
+        <div>
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6 flex items-center gap-3">
+            <CreditCard className="w-8 h-8 text-blue-600" />
+            Credit Cards Management
+          </h2>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <AddCard />
+            <YourCards />
+          </div>
+        </div>
+      </div>
+      </SignedIn>
+{/* singout */}
+      <SignedOut>
+        <p className="text-center mt-10 text-gray-500">
+          Please sign in to access your secure vault.
+        </p>
+      </SignedOut>
+    </div>
+
   );
 }
+
+  // (
+  //   <div>
+  //     <div>
+  //     <div className="flex">
+  //       <h1>Add a File</h1>
+  //     <AddCard/>
+  //     </div>
+  //     <div>
+  //       <h1>Add a Password</h1>
+  //       <AddPassword/>
+  //     </div>
+  //     </div>
+  //     <div>
+  //     <div>
+  //       <h1>Your Files</h1>
+  //       <YourCards/>
+  //     </div>
+  //     <div>
+  //      <h1>Your Passwords</h1> 
+  //      <YourPasswords/>
+  //     </div>
+  //   </div>
+  //    <div>
+  //     <div className="flex">
+  //       <h1>Add a Credit Card</h1>
+  //     <AddCard/>
+  //     </div>
+  //     <div>
+  //       <h1>Add a Password</h1>
+  //       <AddPassword/>
+  //     </div>
+  //     </div>
+  //     <div>
+  //     <div>
+  //       <h1>Your Cards</h1>
+  //       <YourCards/>
+  //     </div>
+  //     <div>
+  //      <h1>Your Passwords</h1> 
+  //      <YourPasswords/>
+  //     </div>
+  //   </div>
+  //   </div>
+  // );
