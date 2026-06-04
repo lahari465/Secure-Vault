@@ -149,10 +149,10 @@ function YourPasswords() {
                       </div>
                     </div>
                   ) : (
-                    <div className="p-5 border-2 rounded-xl hover:bg-linear-to-r hover:from-green-50 hover:to-teal-50 dark:hover:from-green-900/20 dark:hover:to-teal-900/20 hover:border-teal-300 dark:hover:border-teal-700 transition-all">
+                    <div className="p-5 border-2 rounded-xl hover:bg-gradient-to-r hover:from-green-50 hover:to-teal-50 dark:hover:from-green-900/20 dark:hover:to-teal-900/20 hover:border-teal-300 dark:hover:border-teal-700 transition-all">
                       <div className="flex items-start justify-between">
                         <div className="flex items-start gap-4 flex-1">
-                          <div className="w-14 h-14 bg-linear-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
+                          <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
                             <Lock className="w-7 h-7 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
