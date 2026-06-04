@@ -115,7 +115,7 @@ function AddPassword() {
           <Button 
             onClick={handleSubmit} 
             disabled={isSubmitting}
-            className="w-full bg-linear-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white font-semibold py-6 text-base"
+            className="w-full bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white font-semibold py-6 text-base"
           >
             <Plus className="w-5 h-5 mr-2" />
             {isSubmitting ? 'Saving...' : 'Add Password'}

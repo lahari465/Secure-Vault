@@ -108,7 +108,7 @@ function YourFiles() {
               {files.map((file) => (
                 <div
                   key={file.id}
-                  className="flex items-center justify-between p-5 border-2 rounded-xl hover:bg-linear-to-r hover:from-orange-50 hover:to-pink-50 dark:hover:from-orange-900/20 dark:hover:to-pink-900/20 hover:border-orange-300 dark:hover:border-orange-700 transition-all group"
+                  className="flex items-center justify-between p-5 border-2 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-pink-50 dark:hover:from-orange-900/20 dark:hover:to-pink-900/20 hover:border-orange-300 dark:hover:border-orange-700 transition-all group"
                 >
                   <div className="flex items-center gap-4 flex-1 min-w-0">
                     <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl shrink-0 shadow-md">

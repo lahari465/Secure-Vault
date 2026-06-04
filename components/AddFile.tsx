@@ -95,7 +95,7 @@ function AddFile() {
             />
           </div>
           {selectedFile && (
-            <div className="p-4 bg-linear-to-r from-orange-50 to-pink-50 dark:from-orange-900/20 dark:to-pink-900/20 rounded-lg border-2 border-orange-200 dark:border-orange-700 space-y-2 relative">
+            <div className="p-4 bg-gradient-to-r from-orange-50 to-pink-50 dark:from-orange-900/20 dark:to-pink-900/20 rounded-lg border-2 border-orange-200 dark:border-orange-700 space-y-2 relative">
               <button
                 onClick={clearFile}
                 className="absolute top-2 right-2 p-1 hover:bg-orange-100 dark:hover:bg-orange-800 rounded-full transition-colors"
@@ -119,7 +119,7 @@ function AddFile() {
           </div>
           <Button 
             onClick={handleSubmit} 
-            className="w-full bg-linear-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white font-semibold py-6 text-base" 
+            className="w-full bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white font-semibold py-6 text-base" 
             disabled={!selectedFile || isSubmitting}
           >
             <Plus className="w-5 h-5 mr-2" />

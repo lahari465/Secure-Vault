@@ -148,9 +148,9 @@ function YourCards() {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex items-center justify-between p-5 border-2 rounded-xl hover:bg-linear-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 hover:border-purple-300 dark:hover:border-purple-700 transition-all group">
+                    <div className="flex items-center justify-between p-5 border-2 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 hover:border-purple-300 dark:hover:border-purple-700 transition-all group">
                       <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 bg-linear-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
+                        <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
                           <CreditCard className="w-7 h-7 text-white" />
                         </div>
                         <div>
