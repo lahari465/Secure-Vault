@@ -3,10 +3,11 @@ import type { NextRequest } from 'next/server'
 
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/forum(.*)'])
 
-export default clerkMiddleware(async (auth, req: NextRequest) => {
+export default clerkMiddleware((auth, req: NextRequest) => {
   if (isProtectedRoute(req)) {
     // Check if user is signed in
-    if (!auth.userId) {
+    const userId = (auth as any).userId
+    if (!userId) {
       return new Response('Unauthorized', { status: 401 })
     }
   }
